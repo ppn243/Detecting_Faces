@@ -2,7 +2,7 @@ from flask import Flask, redirect, url_for, request, jsonify, make_response
 from flask_pymongo import PyMongo
 from flask_bcrypt import Bcrypt
 from flask_jwt import JWT, jwt_required,current_identity
-
+from datetime import datetime,timedelta
 import jwt as pyjwt # Use a different name for PyJWT
 
 import os
@@ -118,6 +118,11 @@ def admin_login():
 
         # Set a cookie for the token
         response = jsonify({'token': token})
+
+        # Set the cookie with an expiration time (e.g., 1 day from now)
+        expiration = datetime.utcnow() + timedelta(days=1)
+        response.set_cookie('access_token', token, expires=expiration, httponly=True)
+
         return response
     
     return jsonify({'message': 'Invalid credentials'}), 401
@@ -151,8 +156,6 @@ def admin_register():
 @app.route('/admin/create_user', methods=["POST"])
 @token_required
 def create_user(current_identity):
-    # if current_identity is None or current_identity.username != 'admin':
-    #     return jsonify({"message":"Unauthorized access"}), 403
     print(current_identity)
 
     if 'image' not in request.files or not request.files['image'].filename:
@@ -185,6 +188,18 @@ def create_user(current_identity):
     db.users.insert_one({'username': username, 'image_path': image_path})
 
     return jsonify({"message": "User created successfully"}), 201
+
+@app.route('/admin/get_all_user',methods=["GET"])
+@token_required
+def get_all_user(current_identity):
+    print(current_identity)
+    
+    # Retrieve all the users from the database
+    users = db.users.find({},{'_id': 0, 'username': 1, 'image_path': 1})
+
+    users_list= list(users)
+
+    return jsonify({"user": users_list})
 
 if __name__ == "__main__":
     app.run(debug=True,port=5000)

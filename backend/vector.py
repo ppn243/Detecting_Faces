@@ -110,6 +110,17 @@
     
 #     return jsonify({"message": "User created successfully"}), 201
 
+# # @app.route('/admin/get-all-user',methods=["GET"])
+# # @token_required
+# # def get_all_user(current_identity):
+# #     print(current_identity)
 
-# if __name__ == "__main__":
-#     app.run(debug=True,port=5000)
+# #     # Retrieve all the users from the database
+# #     users = db.users.find({},{'_id': 0, 'username': 1, 'image_path': 1})
+
+# #     users_list= list(users)
+
+# #     return jsonify({"user": users_list})
+
+# # if __name__ == "__main__":
+# #     app.run(debug=True,port=5000)
