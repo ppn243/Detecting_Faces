@@ -189,6 +189,43 @@ def create_user(current_identity):
 
     return jsonify({"message": "User created successfully"}), 201
 
+@app.route('/admin/verify_user', methods=["POST"])
+@token_required
+def verify_user(current_identity):
+    print(current_identity)
+
+    if 'image' not in request.files or not request.files['image'].filename:
+        return jsonify({"message": "No file part"}), 400
+
+    image = request.files["image"]
+
+    if not allowed_file(image.filename):
+        return jsonify({"message": "Invalid file extension"}),400
+
+    # Get data from the request (username and multiple image files)
+    username = request.form.get('username')
+    if not username:
+        return jsonify({"message":"UserName is required"}),400
+
+    # Check if username already exists
+    existing_user = db.users.find_one({'username': username})
+    if not existing_user:
+        return jsonify({"message":"Username doesn't already exits"}), 400
+    
+    # Save img in a local folder named "uploads"
+    filename = secure_filename(image.filename)
+    image_path = os.path.join(app.config["UPLOAD_FOLDER"],filename)
+    
+    # image.save(image_path)
+
+    image_vector = get_image_vector(image_path)
+
+    # Insert user into the database with the image path
+    # db.users.insert_one({'username': username, 'image_path': image_path})
+
+    return jsonify({"message": "Verified User Successfully"}), 200
+
+
 @app.route('/admin/get_all_user',methods=["GET"])
 @token_required
 def get_all_user(current_identity):
