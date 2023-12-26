@@ -6,6 +6,7 @@ import {
   Button,
   Typography,
 } from "@material-tailwind/react";
+import { NavLink } from "react-router-dom";
  
 export function Signup() {
   return (
@@ -80,9 +81,9 @@ export function Signup() {
         </Button>
         <Typography color="gray" className="mt-4 text-center font-normal">
           Already have an account?{" "}
-          <a href="#" className="font-medium text-gray-900">
+          <NavLink to="/signin" className="font-medium text-gray-900">
             Sign In
-          </a>
+          </NavLink>
         </Typography>
       </form>
     </Card>
