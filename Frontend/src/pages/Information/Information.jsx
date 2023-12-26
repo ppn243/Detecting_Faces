@@ -1,4 +1,5 @@
 import React from "react";
+import { Sidebar } from "../../components";
 
 const people = [
   {
@@ -48,8 +49,11 @@ const people = [
 export default function Example() {
   return (
     <>
+    <section className="flex">
+    <Sidebar/>
+    <div className="w-full">{/*  Attendence section  */}
     <div className="mx-28 mt-10"><h3 className="font-bold text-2xl">Attendence Status</h3></div>
-    <div className="mx-28 my-10 px-7 rounded-xl bg-slate-300">
+    <div className="mx-28 my-10 px-7 rounded-xl bg-gray-300">
     <ul role="list" className="divide-y divide-gray-100">
       {people.map((person) => (
         <li key={person.email} className="flex justify-between gap-x-6 py-5">
@@ -68,8 +72,8 @@ export default function Example() {
               </p>
             ) : (
               <div className="mt-1 flex items-center gap-x-1.5">
-                <div className="flex-none rounded-full bg-emerald-500/20 p-1">
-                  <div className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                <div className="flex-none rounded-full bg-green-500/20 p-1">
+                  <div className="h-1.5 w-1.5 rounded-full bg-green-700" />
                 </div>
                 <p className="text-xs leading-5 text-gray-500">Attendence</p>
               </div>
@@ -79,6 +83,8 @@ export default function Example() {
       ))}
     </ul>
     </div>
+    </div>    
+    </section>      
     </>
   )
 }
