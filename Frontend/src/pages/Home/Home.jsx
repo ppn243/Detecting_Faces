@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { NavLink } from "react-router-dom";
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -104,12 +105,12 @@ export default function Home() {
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">VNUK Systems</p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
-              <a
-                href="#"
+              <NavLink
+                to="/signup"
                 className="rounded-md bg-navy-blue px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-neutral-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Register
-              </a>
+              </NavLink>
               <a
                 href="#"
                 className="text-sm font-semibold leading-6 text-gray-900"
