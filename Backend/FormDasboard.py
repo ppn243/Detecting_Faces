@@ -24,7 +24,7 @@ class DashBoard():
         Frame_dashboard = Frame(self.root, bg="white")
         Frame_dashboard.place(x=0, y=0, width=1000, height=400)
 
-        title = Label(Frame_dashboard, text="Mở cửa bằng nhận diện khuôn mặt", font=(
+        title = Label(Frame_dashboard, text="Điểm danh bằng nhận diện khuôn mặt", font=(
             "Times", 35, "bold"), fg="#6162FF", bg="white", bd=0, padx=10, pady=5, borderwidth=0)
         title.place(x=150, y=20)
 
@@ -44,7 +44,7 @@ class DashBoard():
         style.configure("TButton", bordercolor="none", focuscolor="none", borderwidth=0,
                         relief="flat", background="#6162FF", foreground="orange", padding=6, borderradius=80)
         # Button quản lí doanh thu
-        ttk.Button(Frame_dashboard, text="Open", command=self.transfer_Open_Door).place(
+        ttk.Button(Frame_dashboard, text="Check!!!", command=self.transfer_Open_Door).place(
             x=20, y=110, width=160, height=40)
         # Button đăng kí xe
         ttk.Button(Frame_dashboard, text="Register", command=self.transfer_Regist).place(
