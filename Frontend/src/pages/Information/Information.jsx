@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Sidebar } from "../../components";
 import axios from "axios";
 
-export default function Example() {
+export default function Information() {
   const [people, setPeople] = useState([]);
   useEffect(() => {
     // Gọi API từ Flask server khi component được tạo
