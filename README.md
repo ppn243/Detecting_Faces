@@ -1,5 +1,17 @@
 Back-End
-- Initialize environment
+- Initialize environment in Terminal VSCode
+  + python -m venv .venv
+  + python -m pip install --upgrade pip
+  + .venv\Scripts\activate: move to the environment in which to install the library
+    + pip install flask
+    + pip install opencv-python
+    + pip install Pillow
+    + pip install pandas
+    + pip install ultralytics
+    + pip install tensorflow
+    + pip install scikit-learn
+    + pip install tkinter
+    + python app.py : Running the app [Back-End]
 - Library: Using Flask to develop the project
 - The integration of key Python libraries
   + OpenCV for face detection and recognition
@@ -21,13 +33,3 @@ Back-End
     +  Provides visual feedback on the GUI, including recognized names and login status
   + Data Communication
     + Utilizes the Requests library to send data (result and name) to the backend server for further processing
-- System Component
-  + Face Registration
-    + Capture and Detection: The system captures facial images from the camera feed and performs face detection using the OpenCV library.
-    + Data Processing: Processes the captured facial data, extracts facial features, and registers the user in the system. After the image processing is completed in the "process" folder, an automated workflow is implemented to seamlessly transfer the processed images to the "Raw" folder
-      ![image](https://github.com/ppn243/Detecting_Faces/assets/91375299/082190f5-1ae1-478c-aaa7-812a9357514e)
-  + Face Login
-    + Real-time Face Recognition: Implements real-time face recognition to authenticate users attempting to log in
-    + Comparison and Authentication: Compares the recognized facial features with the registered data and authenticates the user
-    + User Feedback: Provides visual feedback on the GUI, indicating the recognized person's name and login status
-
