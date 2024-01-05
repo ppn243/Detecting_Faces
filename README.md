@@ -1,4 +1,4 @@
-Back-End
+![image](https://github.com/ppn243/Detecting_Faces/assets/91375299/28dc3a7d-88e4-4a60-a4bf-78fba5de0dcd)Back-End
 - Video Demo: https://drive.google.com/file/d/1gAVKSb-0dyHBLsk6D0I3MzxuxFMjTylY/view
 - Initialize environment in Terminal VSCode
   + python -m venv .venv
@@ -34,3 +34,13 @@ Back-End
     +  Provides visual feedback on the GUI, including recognized names and login status
   + Data Communication
     + Utilizes the Requests library to send data (result and name) to the backend server for further processing
+- GUI Component:
+    + Tkinter Interface: The GUI provides a user-friendly interface with buttons for face registration and login![image](https://github.com/ppn243/Detecting_Faces/assets/91375299/5ea7b37f-b71b-41bf-9c9d-9ced9c1299e6)
+      "password": "abc"
+    + Image Display: Displays the real-time camera feed and overlays rectangles on detected faces ![image](https://github.com/ppn243/Detecting_Faces/assets/91375299/52985370-7515-427e-86d3-50937fade63c)
+       Click the Capture Button: Captures facial images from the camera feed and click save
+    + The check button: Compares recognized features with registered data ![image](https://github.com/ppn243/Detecting_Faces/assets/91375299/5b3b71b2-8bb4-4ae5-a2f3-4dea6374f880)
+    + Don't recognition face ![image](https://github.com/ppn243/Detecting_Faces/assets/91375299/4dbf5b2c-94d7-445d-8a4b-2a79c6bbdfc7)
+
+
+
