@@ -1,4 +1,4 @@
-![image](https://github.com/ppn243/Detecting_Faces/assets/91375299/28dc3a7d-88e4-4a60-a4bf-78fba5de0dcd)Back-End
+Back-End
 - Video Demo: https://drive.google.com/file/d/1gAVKSb-0dyHBLsk6D0I3MzxuxFMjTylY/view
 - Initialize environment in Terminal VSCode
   + python -m venv .venv
